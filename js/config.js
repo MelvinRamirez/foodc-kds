@@ -1,0 +1,15 @@
+export const API_URL = 'https://script.google.com/macros/s/<DEPLOYMENT_ID>/exec'; // same /exec as foodc-cliente
+export const POLL_INTERVAL_MS = 5000;        // RF-KDS-01, measured from settle to next start
+export const POLL_TIMEOUT_MS = 15000;        // lock-free read
+export const VERIFY_TIMEOUT_MS = 15000;      // no lock, no Sheets
+export const COMPLETE_TIMEOUT_MS = 30000;    // 15 s lock wait + hold + cold start/redirect
+export const COMPLETION_BACKOFF_MS = [2000, 5000, 10000, 20000, 30000]; // last value repeats
+export const STALE_ALERT_MS = 60000;         // A2 escalation
+export const URGENCY_WARNING_MIN = 10;       // A1 (confirmed by user 2026-10-13)
+export const URGENCY_CRITICAL_MIN = 15;      // A1 (confirmed by user 2026-10-13, was 20 in design draft)
+export const SERVER_UTC_OFFSET_MIN = -360;   // appsscript.json timeZone America/Tegucigalpa (UTC-6, no DST)
+export const PIN_MIN = 6;                    // A5d mitigation (confirmed by user 2026-10-13)
+export const PIN_MAX = 12;                   // A5d mitigation (confirmed by user 2026-10-13)
+export const PENDING_MAX_AGE_MS = 12 * 60 * 60 * 1000;
+export const STORAGE_KEY = 'foodc.kds.v1';   // localStorage: { v:1, pending: PendingCompletion[] }
+export const PIN_SESSION_KEY = 'foodc.kds.pin'; // sessionStorage: raw PIN string
