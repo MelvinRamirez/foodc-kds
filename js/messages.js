@@ -27,6 +27,14 @@ export const messages = {
     emptyQueueOk: 'No hay pedidos pendientes',
     emptyQueueStale: 'Sin conexión: no se puede confirmar si hay pedidos',
   },
+  wake: {
+    // state.wake 'unsupported'|'denied' hint, ver design.md Architecture
+    // Decision "Screen Wake Lock with an explicit, visible fallback" (A6).
+    // No existía un texto para esto en el catálogo original (K1); se agrega
+    // aquí en K3 en vez de hardcodearlo en status-bar-view.js, para mantener
+    // consistencia con el resto del catálogo de copy.
+    fallbackHint: "La pantalla puede apagarse. Active 'pantalla siempre encendida' en el dispositivo.",
+  },
   completion: {
     completeButton: 'Completado',
     // Completion Recovery Policy outcomes, ver design.md "Data Flow" > "Completion".
