@@ -1,4 +1,4 @@
-export const API_URL = 'https://script.google.com/macros/s/<DEPLOYMENT_ID>/exec'; // same /exec as foodc-cliente
+export const API_URL = 'https://script.google.com/macros/s/AKfycbzN9m1QXFS0IW7ervb4zbhK8AYJiHLXahur4QUPC-BPJYZrwaeAxwyJ3QY8nVRRpFqH/exec'; // same /exec as foodc-cliente
 export const POLL_INTERVAL_MS = 5000;        // RF-KDS-01, measured from settle to next start
 export const POLL_TIMEOUT_MS = 15000;        // lock-free read
 export const VERIFY_TIMEOUT_MS = 15000;      // no lock, no Sheets
