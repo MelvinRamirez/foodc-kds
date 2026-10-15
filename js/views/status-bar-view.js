@@ -71,19 +71,19 @@ function render({ sync, lastSyncAt, wake }) {
       role: isBanner ? 'alert' : 'status',
     },
     [
-      el('div', { class: 'status-bar__sync flex items-center gap-2' }, [
+      el('div', { class: 'status-bar__sync flex min-w-0 items-center gap-2' }, [
         el('span', {
-          class: `status-bar__dot h-2.5 w-2.5 rounded-full ${STATUS_DOT_CLASS[sync.status] || 'bg-slate-400'}`,
+          class: `status-bar__dot h-2.5 w-2.5 shrink-0 rounded-full ${STATUS_DOT_CLASS[sync.status] || 'bg-slate-400'}`,
           'aria-hidden': 'true',
         }),
-        el('span', { class: 'status-bar__text text-sm font-semibold' }, [text]),
+        el('span', { class: 'status-bar__text min-w-0 text-sm font-semibold' }, [text]),
       ]),
       el(
         'button',
         {
           type: 'button',
           class:
-            'status-bar__lock min-h-11 min-w-11 rounded-lg border border-slate-300 px-3 py-1 text-sm font-bold text-slate-700',
+            'status-bar__lock min-h-11 min-w-11 shrink-0 whitespace-nowrap rounded-lg border border-slate-300 px-3 py-1 text-sm font-bold text-slate-700',
           'data-action': 'lock',
         },
         [messages.pin.lockButton],
