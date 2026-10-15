@@ -7,7 +7,7 @@
 // estando offline (`kds-pwa-shell`, "API Requests Are Always Network-Only").
 
 const CACHE_PREFIX = 'foodc-kds-shell-';
-const CACHE_VERSION = 'foodc-kds-shell-v2'; // se incrementa en el mismo commit que cualquier cambio de archivo del shell
+const CACHE_VERSION = 'foodc-kds-shell-v3'; // se incrementa en el mismo commit que cualquier cambio de archivo del shell
 
 const PRECACHE = [
   './',
