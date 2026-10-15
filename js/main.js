@@ -149,6 +149,17 @@ function main() {
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') effects.pollNow(ctx);
   });
+
+  // Registra el service worker del app shell (kds-pwa-shell). Sin recarga
+  // automática al actualizar (design.md, "Service worker update per deploy"):
+  // la KDS corre horas en una sola pestaña, así que el shell nuevo se aplica
+  // recién en la próxima navegación — por eso el checklist de deploy incluye
+  // recargar manualmente la tablet una vez después de cada deploy. El fallo
+  // de registro se ignora (`catch(() => {})`): sin service worker la app
+  // sigue funcionando online, solo pierde precache/offline del shell.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+  }
 }
 
 main();
